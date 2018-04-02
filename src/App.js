@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
-import Cryptocurrency from './Components/Cryptocurrency'
+import Header from './Components/Header';
+import Cryptocurrency from './Components/Cryptocurrency';
+import Footer from './Components/Footer';
 
 class App extends Component {
   render() {
     return (
       <div className="main-div">
-        <header className="App-header">
-          <h1 className="App-title">Cryptocurrency Tracker</h1>
-        </header>
+        <Header />
         <Cryptocurrency />
+        <Footer />
       </div>
     );
   }

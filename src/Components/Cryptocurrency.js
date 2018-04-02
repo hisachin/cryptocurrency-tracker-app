@@ -14,13 +14,13 @@ class Cryptocurrency extends Component {
 
          componentDidMount() {
 	        this.fetchCryptocurrencyData();
-	        this.interval = setInterval(() => this.fetchCryptocurrencyData(), 10 * 1000);
+	        this.interval = setInterval(() => this.fetchCryptocurrencyData(), 5 * 1000);
 	    }
 
         fetchCryptocurrencyData() {
 	        axios.get("https://api.coinmarketcap.com/v1/ticker/?convert=INR&limit=10")
 	            .then(response => {
-	                var wanted = ["bitcoin", "ethereum", "litecoin"];
+	                var wanted = ["bitcoin", "ethereum", "litecoin","ripple"];
 	                var result = response.data.filter(currency => wanted.includes(currency.id));
 	                this.setState({ data: result});
 	            })
