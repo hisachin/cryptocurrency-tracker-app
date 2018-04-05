@@ -12,6 +12,11 @@
     min-height: 300px;
     margin-top: 100px;
     margin-bottom: 100px;
+    background-color: #64287da3;
+}
+
+.single-currency-div:hover{
+	background: #22032fa3;
 }
 
 .single-currency-div .red {

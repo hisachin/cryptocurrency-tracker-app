@@ -6,7 +6,7 @@ class Footer extends Component {
 		return(
 			<div>
 				<footer className = "text-center">
-					<p>Made By <a href ="https://github.com/hisachin">Sachin</a></p>
+					<p>Cryptocurrency Tracker </p>
 				</footer>
 			</div>
 			);

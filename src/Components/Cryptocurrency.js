@@ -8,7 +8,8 @@ class Cryptocurrency extends Component {
 	constructor(props) {
             super(props);
             this.state = {
-                data: []
+                data: [],
+                loading : true
             };
         }
 
@@ -22,17 +23,22 @@ class Cryptocurrency extends Component {
 	            .then(response => {
 	                var wanted = ["bitcoin", "ethereum", "litecoin","ripple"];
 	                var result = response.data.filter(currency => wanted.includes(currency.id));
-	                this.setState({ data: result});
+	                this.setState({ data: result,loading:false});
 	            })
 	            .catch(err => console.log(err));
 	    }
 
 
 	render() {
-
-		let cryptocurrency_type = this.state.data.map((currency) =>
+		let cryptocurrency_type;
+		if(this.state.loading){
+			cryptocurrency_type = <div className="text-center">Loading...</div>;
+		}else{
+			 cryptocurrency_type = this.state.data.map((currency) =>
 				<Singlecurrency data = {currency} key = {currency.id}/>
 			); 
+		}
+		
     	return (
       		<div className="cryptocurrency-div">
       			<div className="container">
